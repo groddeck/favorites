@@ -12,7 +12,7 @@ Develop a program that produces an output file containing a list of pairs of art
 ## Goals
 
 - Implement an application that reads an outside file 
-- Implement an application that produces an output file
+- Implement an application that produces an output file of lists of popular paired artists
 - Optimize run-time of an algorithm
 
 
