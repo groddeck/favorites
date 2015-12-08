@@ -37,4 +37,4 @@ Develop two programs that produce an output file containing a list of pairs of a
 
 - As mentioned, write tests using [RSpec](http://rspec.info/). The following command summonds tests:
 
-    $ rspec spec
+<pre><code>$ rspec spec</pre></code>
