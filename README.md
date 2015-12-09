@@ -30,11 +30,11 @@ Develop two programs that produce an output file containing a list of pairs of a
 
 ## Dataset Description
 
-- **artist_lists_small.txt** - Each line represents a list of favorite artists for a member of Last.FM. Each artists is separated by a comma. A new line indicates a different Last.FM member.
+- **artist_lists_small.txt** - Each line represents a list of favorite artists for a member of Last.FM. Each artist is separated by a comma. A new line indicates a different Last.FM member.
 
 
 ## Testing
 
-- As mentioned, write tests using [RSpec](http://rspec.info/). The following command summonds tests:
+- As mentioned, write tests using [RSpec](http://rspec.info/). The following command summons tests:
 
 <pre><code>$ rspec spec</pre></code>
