@@ -20,7 +20,7 @@ class Scanner
   end
 
   def self.read_file(file)
-    file.lines.to_a
+    file.each_line.to_a
   end
 
   def self.write_file(file, pairs)
@@ -28,29 +28,15 @@ class Scanner
   end
 
   def self.popular_pairs(rows)
-    matrix = []
-    rows.each do |row|
-      matrix << row.split(',').map{|n| n.delete("\n")}
-    end
-    artists = {}
-    matrix.each_with_index do |row, i|
-      row.each do |artist|
-        artists[artist] ||= []
-        artists[artist] << i
-      end
-    end
-    pop_artists = {}
-    artists.each do |artist, rows|
-      pop_artists[artist] = rows if rows.count >= min
-    end
+    pairs_freq = Hash.new(0)
     pop_pairs = []
-    pop_artists.each do |artist_a, rows_a|
-      pop_artists.each do |artist_b, rows_b|
-        next if artist_a == artist_b
-        pop_pairs << [artist_a, artist_b].sort if (rows_a & rows_b).count >= min
+    rows.each do |row|
+      row.delete("\n").split(',').permutation(2).map(&:sort).uniq.each do |pair|
+        ordered = pair.sort
+        pop_pairs << ordered if (pairs_freq[ordered] += 1) == min
       end
     end
-    pop_pairs.uniq
+    pop_pairs
   end
 
   def self.min
