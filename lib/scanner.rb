@@ -24,7 +24,7 @@ class Scanner
   end
 
   def self.write_file(file, pairs)
-    file.puts pairs.map{|pair| pair.join(', ')}.join("\n")
+    file.puts pairs.map{|pair| pair.join(',')}.join("\n")
   end
 
   def self.popular_pairs(rows)

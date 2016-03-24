@@ -13,7 +13,7 @@ describe Scanner do
       it 'reads from the given input file and writes to console' do
         infile = double('File')
       	expect(File).to receive(:open).with('infile').and_return(infile)
-      	allow(infile).to receive(:lines).and_return(['input1', 'input2'])
+      	allow(infile).to receive(:each_line).and_return(['input1', 'input2'])
       	allow(Scanner).to receive(:popular_pairs).with(['input1', 'input2']).and_return([['row1'], ['row2']])
       	expect(STDOUT).to receive(:puts).with("row1\nrow2")
       	Scanner.process ['infile']
@@ -24,7 +24,7 @@ describe Scanner do
       it 'reads from the given input file and writes to the given output file' do
         infile = double('File')
       	expect(File).to receive(:open).with('infile').and_return(infile)
-      	allow(infile).to receive(:lines)
+      	allow(infile).to receive(:each_line)
       	allow(Scanner).to receive(:popular_pairs).and_return([['row1'], ['row2']])
       	outfile = double('File')
       	expect(File).to receive(:open).with('outfile', 'w').and_return(outfile)
