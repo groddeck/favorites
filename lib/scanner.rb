@@ -20,11 +20,11 @@ class Scanner
   end
 
   def self.read_file(file)
-    file.lines.to_a
+    file.each_line.to_a
   end
 
   def self.write_file(file, pairs)
-    file.puts pairs.map{|pair| pair.join(', ')}.join("\n")
+    file.puts pairs.map{|pair| pair.join(',')}.join("\n")
   end
 
   def self.popular_pairs(rows)
